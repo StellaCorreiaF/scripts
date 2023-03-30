@@ -1,0 +1,17 @@
+PATH
+  remote: ../fakeFlixConsumer
+  specs:
+    fakeFlixConsumer (0.1.0)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  fakeFlixConsumer!
+
+BUNDLED WITH
+   2.4.10
