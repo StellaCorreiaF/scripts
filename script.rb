@@ -1,6 +1,9 @@
 !#/usr/bin/env ruby
 
 require "bundler/setup"
+require "bundler/setup"
+require "fileutils"
+require "yaml"
 require "fakeFlixConsumer"
 
 FakeFlixConsumer.configure do |config|
@@ -16,27 +19,28 @@ genres = client.list_genres
 movies_by_genre = client.list_movies_by_genre(4)
 
 
-filme = client.show_movie(1)
+movie_by_id = client.show_movie(1)
 
 puts "Filmes: " + "\n\n"
 pp movies
 
-puts "\n\n"
+#puts "\n\n"
 
-puts "Diretores: " + "\n\n"
-pp directors
+#puts "Diretores: " + "\n\n"
+# pp directors
 
 puts "\n\n"
 
 puts "Gêneros: " + "\n\n"
-pp genres
-puts "\n\n"
-puts "Filmes por gênero: " + "\n\n"
-pp movies_by_genre
+ pp genres
+#puts "\n\n"
+#puts "Filmes por gênero: " + "\n\n"
+#pp movies_by_genre
 #new_movie = client.create_movie(title: "O grito", genre_id: 5,director_id: 2)
 
 # p new_movie
-p filme
+# filme
 
 
-FileUtils.mkdir p("tmp") if !File.directory?("/tmp")
+FileUtils.mkdir_p("tmp") if !File.directory?("./tmp")
+#File.write("tmp/movies_.yml", movies.to_yaml)
